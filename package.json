@@ -4,7 +4,7 @@
   "description": "テンプレート",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "sassBuild": "gulp sassBuild"
   },
   "repository": {
     "type": "git",
