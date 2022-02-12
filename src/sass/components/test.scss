@@ -1,3 +1,5 @@
+@use "../global" as g;
+
 .test {
-  color: #0a0;
+  color: g.$c_primary;
 }
