@@ -1,0 +1,24 @@
+@use "variables" as v;
+
+@mixin Mq($name) {
+  @media screen and (min-width: map-get(v.$break_points, $name)) {
+    @content;
+  }
+}
+
+@mixin container() {
+  max-width: 315px;
+  margin: 0 auto;
+  @include Mq(sm) {
+    max-width: map-get(v.$width_containers, sm);
+  }
+  @include Mq(md) {
+    max-width: map-get(v.$width_containers, md);
+  }
+  @include Mq(lg) {
+    max-width: map-get(v.$width_containers, lg);
+  }
+  @include Mq(xl) {
+    max-width: map-get(v.$width_containers, xl);
+  }
+}

@@ -1,5 +1,26 @@
 @use "../global" as g;
 
 .test {
+  display: -ms-grid;
+  display: grid;
   color: g.$c_primary;
+  transform: translate(50%, 50%);
+
+  @include g.Mq(md) {
+    color: g.$c_primary;
+  }
+}
+
+.test2 {
+  display: -ms-grid;
+  display: grid;
+  color: g.$c_primary;
+  opacity: .5;
+  transform: translate(50%, 50%);
+
+  @include g.Mq(md) {
+    color: g.$c_primary;
+  }
+
+  @include g.container();
 }
