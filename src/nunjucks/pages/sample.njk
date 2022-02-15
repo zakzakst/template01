@@ -4,7 +4,17 @@
   DESCRIPTION: 'ページ概要',
   PATH: '',
   NAV: 'sample',
-  ROOT: './'
+  ROOT: './',
+  BREADCRUMBS: [
+    {
+      PATH: '',
+      NAME: 'トップ'
+    },
+    {
+      PATH: '/sample.html',
+      NAME: 'サンプル'
+    }
+  ]
 } -%}
 
 {% block PAGE_HEAD -%}
@@ -14,11 +24,13 @@
 {%- endblock %}
 
 {% block PAGE_CONTENT -%}
-<p>サンプル</p>
+<div>サンプル</div>
 {%- endblock %}
 
 {% block FIX_CONTENT -%}
-<p>固定要素</p>
+<!-- ▼▼▼ 固定要素（モーダルなど） ▼▼▼ -->
+<div>固定要素</div>
+<!-- ▲▲▲ 固定要素（モーダルなど） ▲▲▲ -->
 {%- endblock %}
 
 {% block PAGE_FOOT -%}
