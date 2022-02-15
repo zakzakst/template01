@@ -11,7 +11,9 @@
   {# ▲▲▲ HEAD（ページ専用） ▲▲▲ #}
 </head>
 <body>
-  {# {% include '../components/page-loader.njk' %} #}
+  {# ▼▼▼ ページローダー ▼▼▼ #}
+  {% include '../components/page-loader.njk' %}
+  {# ▲▲▲ ページローダー ▲▲▲ #}
 
   {# ▼▼▼ ヘッダー ▼▼▼ #}
   {% include '../components/header.njk' %}
@@ -27,6 +29,10 @@
   {# ▼▼▼ フッター ▼▼▼ #}
   {% include '../components/footer.njk' %}
   {# ▲▲▲ フッター ▲▲▲ #}
+
+  {# ▼▼▼ トップへ戻る ▼▼▼ #}
+  {% include '../components/go-top.njk' %}
+  {# ▲▲▲ トップへ戻る ▲▲▲ #}
 
   {# ▼▼▼ 固定要素 ▼▼▼ #}
   {% block FIX_CONTENT -%}
