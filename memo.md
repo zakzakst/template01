@@ -7,3 +7,6 @@
 
 ### browserslist
 - https://blog.dododori.com/create/program/browserslistrc/
+
+### imagemin
+- バージョンを上げるとエラーが発生するため、関連モジュールは低いバージョンを指定する
