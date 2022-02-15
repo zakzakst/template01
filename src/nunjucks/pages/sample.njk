@@ -1,0 +1,28 @@
+{% extends 'layouts/default.njk' %}
+{% set PAGE_DATA = {
+  TITLE: 'ページタイトル',
+  DESCRIPTION: 'ページ概要',
+  PATH: '',
+  NAV: 'sample',
+  ROOT: './'
+} -%}
+
+{% block PAGE_HEAD -%}
+  <!-- ▼▼▼ 読み込みファイル（ページ専用） ▼▼▼ -->
+  <link rel="stylesheet" href="/{{ CONSTANTS.SITE_ROOT }}css/sample.css">
+  <!-- ▲▲▲ 読み込みファイル（ページ専用） ▲▲▲ -->
+{%- endblock %}
+
+{% block PAGE_CONTENT -%}
+<p>サンプル</p>
+{%- endblock %}
+
+{% block FIX_CONTENT -%}
+<p>固定要素</p>
+{%- endblock %}
+
+{% block PAGE_FOOT -%}
+  <!-- ▼▼▼ 読み込みファイル（ページ専用） ▼▼▼ -->
+  <script src="/{{ CONSTANTS.SITE_ROOT }}js/sample.js"></script>
+  <!-- ▲▲▲ 読み込みファイル（ページ専用） ▲▲▲ -->
+{%- endblock %}
