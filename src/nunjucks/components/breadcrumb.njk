@@ -1,0 +1,9 @@
+{% macro default(ITEMS) %}
+<!-- ▼▼▼ パンくず ▼▼▼ -->
+<ul>
+  {% for ITEM in ITEMS %}
+    <li><a href="{{ ITEM.LINK }}">{{ ITEM.LABEL }}{{ loop.index }}</a></li>
+  {% endfor %}
+</ul>
+<!-- ▲▲▲ パンくず ▲▲▲ -->
+{% endmacro %}
