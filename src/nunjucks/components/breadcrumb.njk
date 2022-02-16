@@ -2,7 +2,16 @@
 <!-- ▼▼▼ パンくず ▼▼▼ -->
 <ul>
   {% for ITEM in ITEMS %}
-    <li><a href="{{ ITEM.LINK }}">{{ ITEM.LABEL }}{{ loop.index }}</a></li>
+    {# クラス名を判定 #}
+    {% if ITEMS.length === loop.index %}
+      {% set CLASS = ' class="--active"' %}
+    {% else %}
+      {% set CLASS = '' %}
+    {% endif %}
+
+    <li>
+      <a href="{{ ITEM.LINK }}"{{ CLASS | safe }}>{{ ITEM.LABEL }}{{ loop.index }}</a>
+    </li>
   {% endfor %}
 </ul>
 <!-- ▲▲▲ パンくず ▲▲▲ -->
