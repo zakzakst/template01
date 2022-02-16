@@ -1,0 +1,34 @@
+{% extends 'layouts/default.njk' %}
+{% set PAGE_DATA = {
+  TITLE: 'ページタイトル',
+  DESCRIPTION: 'ページ概要',
+  PATH: '',
+  NAV: 'parts',
+  ROOT: './',
+  BREADCRUMB_ITEMS: [
+    {
+      LINK: '',
+      LABEL: 'トップ'
+    },
+    {
+      LINK: '/parts.html',
+      LABEL: 'パーツ集'
+    }
+  ]
+} -%}
+
+{# ▼▼▼ コンポーネント読み込み ▼▼▼ #}
+{%- import 'components/breadcrumb.njk' as BREADCRUMB -%}
+{# ▲▲▲ コンポーネント読み込み ▲▲▲ #}
+
+{% block PAGE_CONTENT -%}
+  {# ▼▼▼ パンくず ▼▼▼ #}
+  {{ BREADCRUMB.default(PAGE_DATA.BREADCRUMB_ITEMS) }}
+  {# ▲▲▲ パンくず ▲▲▲ #}
+{%- endblock %}
+
+{% block FIX_CONTENT -%}
+<!-- ▼▼▼ 固定要素（モーダルなど） ▼▼▼ -->
+<div>固定要素</div>
+<!-- ▲▲▲ 固定要素（モーダルなど） ▲▲▲ -->
+{%- endblock %}
