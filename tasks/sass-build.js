@@ -11,7 +11,6 @@ const autoprefixer = require('autoprefixer');
 const combineMQ = require('postcss-combine-media-query');
 const stylelint = require('stylelint');
 
-
 /**
  * 変数設定
  */
@@ -28,7 +27,6 @@ const postcssPlugin = [
     fix: true,
   }),
 ];
-
 
 /**
  * 関数

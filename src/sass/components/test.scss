@@ -24,3 +24,7 @@
 
   @include g.container();
 }
+
+footer {
+  color: g.$c_primary;
+}

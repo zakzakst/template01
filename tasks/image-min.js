@@ -7,7 +7,6 @@ const mozjpeg = require('imagemin-mozjpeg');
 const pngquant = require('imagemin-pngquant');
 const changed = require('gulp-changed');
 
-
 /**
  * 変数設定
  */
@@ -24,7 +23,6 @@ const imageminPlugin = [
   imagemin.svgo(),
   imagemin.gifsicle(),
 ];
-
 
 /**
  * 関数

@@ -12,14 +12,10 @@ const gulpIf = require('gulp-if');
 const htmlmin = require('gulp-htmlmin');
 const rename = require('gulp-rename');
 
-
 /**
  * 変数設定
  */
-const files = [
-  'src/nunjucks/pages/**/*.njk',
-  '!src/nunjucks/pages/**/_*.njk',
-];
+const files = ['src/nunjucks/pages/**/*.njk', '!src/nunjucks/pages/**/_*.njk'];
 const dist = './dist';
 const root = 'src/nunjucks/';
 const environment = process.env.NODE_ENV || 'development';
@@ -33,7 +29,6 @@ const htmlminConf = {
   removeComments: true,
 };
 const CONSTANTS = require('../src/nunjucks/constants.js');
-
 
 /**
  * 関数
