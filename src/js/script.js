@@ -1,1 +1,3 @@
-console.log('test');
+import { SampleInit } from './modules/sample';
+
+SampleInit();

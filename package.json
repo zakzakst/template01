@@ -4,6 +4,8 @@
   "description": "テンプレート",
   "main": "index.js",
   "scripts": {
+    "start": "gulp",
+    "build": "gulp build",
     "nunjucksBuild": "gulp nunjucksBuild",
     "sassBuild": "gulp sassBuild",
     "sassLint": "stylelint --fix **/*.scss",
@@ -25,6 +27,7 @@
     "@babel/preset-env": "^7.16.11",
     "autoprefixer": "^10.4.2",
     "babel-loader": "^8.2.3",
+    "browser-sync": "^2.27.7",
     "eslint": "^8.9.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",

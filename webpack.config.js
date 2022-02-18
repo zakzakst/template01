@@ -1,6 +1,7 @@
 const ESLintPlugin = require('eslint-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
-const environment = process.env.NODE_ENV || 'development';
+// const environment = process.env.NODE_ENV || 'development';
+const environment = 'production';
 
 module.exports = {
   entry: {
@@ -35,7 +36,8 @@ module.exports = {
         terserOptions: {
           compress: {
             // drop_console: environment === 'production' ? true : false,
-            drop_console: true,
+            // drop_console: true,
+            drop_console: false,
           },
         },
       }),
