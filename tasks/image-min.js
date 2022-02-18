@@ -9,8 +9,8 @@ const changed = require('gulp-changed');
 
 
 /**
-* 変数設定
-*/
+ * 変数設定
+ */
 const files = './src/img/**/*.{jpg,jpeg,png,gif,svg}';
 const dist = './dist/img';
 const imageminPlugin = [
@@ -27,8 +27,8 @@ const imageminPlugin = [
 
 
 /**
-* 関数
-*/
+ * 関数
+ */
 const IMAGE_MIN = () => {
   return src(files)
     .pipe(changed(dist))

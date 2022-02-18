@@ -10,3 +10,6 @@
 
 ### imagemin
 - バージョンを上げるとエラーが発生するため、関連モジュールは低いバージョンを指定する
+
+### eslint
+- https://stackoverflow.com/questions/69818851/module-build-failed-from-node-modules-eslint-loader-dist-cjs-js-typeerror
