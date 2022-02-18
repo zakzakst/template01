@@ -14,8 +14,8 @@ const rename = require('gulp-rename');
 
 
 /**
-* 変数設定
-*/
+ * 変数設定
+ */
 const files = [
   'src/nunjucks/pages/**/*.njk',
   '!src/nunjucks/pages/**/_*.njk',
@@ -36,8 +36,8 @@ const CONSTANTS = require('../src/nunjucks/constants.js');
 
 
 /**
-* 関数
-*/
+ * 関数
+ */
 const NUNJUCKS_BUILD = () => {
   return src(files)
     .pipe(plumber())
