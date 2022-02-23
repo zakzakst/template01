@@ -18,7 +18,7 @@ const stylelint = require('stylelint');
 const files = './src/sass/style.scss';
 const dist = './dist/css';
 const sassConf = {
-  outputStyle: 'compressed',
+  // outputStyle: 'compressed',
   fiber: Fiber,
 };
 const postcssPlugin = [
