@@ -41,3 +41,32 @@ $padding_names: (
     }
   }
 }
+
+// グリッド
+$grid_gap: 16px;
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: calc($grid_gap / -2);
+  
+  & > [class^="col-"] {
+    flex-shrink: 0;
+    padding: calc($grid_gap / 2);
+  }
+}
+
+@for $i from 1 through 12 {
+  // デバイスサイズの指定なし
+  .col-#{$i} {
+    width: calc(100% / 12 * $i);
+  }
+  // デバイスサイズの指定あり
+  @each $break_point_key, $break_point in g.$break_points {
+    .col-#{$break_point_key}-#{$i} {
+      @media screen and (min-width: #{$break_point}) {
+        width: calc(100% / 12 * $i);
+      }
+    }
+  }
+}
