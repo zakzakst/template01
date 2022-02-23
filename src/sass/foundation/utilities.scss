@@ -1,33 +1,72 @@
+@use "../global" as g;
+
 // マージン・パディング
-@for $i from 0 through 10 {
-  .m#{$i} {
-    margin: #{$i * 10}px !important;
+$margin_names: (
+  m: margin,
+  mt: margin-top,
+  mb: margin-bottom,
+  ml: margin-left,
+  mr: margin-right,
+);
+
+$padding_names: (
+  p: padding,
+  pt: padding-top,
+  pb: padding-bottom,
+  pl: padding-left,
+  pr: padding-right,
+);
+
+@each $name_key, $name in map-merge($margin_names, $padding_names) {
+  @each $space_key, $space in g.$spaces {
+    // デバイスサイズの指定なし
+    .#{$name_key}-#{$space_key} {
+      @if $space_key == auto {
+        #{$name}: #{$space} !important;
+      } @else {
+        #{$name}: #{$space}px !important;
+      }
+    }
+    // デバイスサイズの指定あり
+    @each $break_point_key, $break_point in g.$break_points {
+      .#{$name_key}-#{$break_point_key}-#{$space_key} {
+        @media screen and (min-width: #{$break_point}) {
+          @if $space_key == auto {
+            #{$name}: #{$space} !important;
+          } @else {
+            #{$name}: #{$space}px !important;
+          }
+        }
+      }
+    }
   }
-  .mt#{$i} {
-    margin-top: #{$i * 10}px !important;
+}
+
+// グリッド
+$grid_gap: 16px;
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: calc($grid_gap / -2);
+  
+  & > [class^="col-"] {
+    flex-shrink: 0;
+    padding: calc($grid_gap / 2);
   }
-  .mb#{$i} {
-    margin-bottom: #{$i * 10}px !important;
+}
+
+@for $i from 1 through 12 {
+  // デバイスサイズの指定なし
+  .col-#{$i} {
+    width: calc(100% / 12 * $i);
   }
-  .ml#{$i} {
-    margin-left: #{$i * 10}px !important;
-  }
-  .mr#{$i} {
-    margin-right: #{$i * 10}px !important;
-  }
-  .p#{$i} {
-    padding: #{$i * 10}px !important;
-  }
-  .pt#{$i} {
-    padding-top: #{$i * 10}px !important;
-  }
-  .pb#{$i} {
-    padding-bottom: #{$i * 10}px !important;
-  }
-  .pl#{$i} {
-    padding-left: #{$i * 10}px !important;
-  }
-  .pr#{$i} {
-    padding-right: #{$i * 10}px !important;
+  // デバイスサイズの指定あり
+  @each $break_point_key, $break_point in g.$break_points {
+    .col-#{$break_point_key}-#{$i} {
+      @media screen and (min-width: #{$break_point}) {
+        width: calc(100% / 12 * $i);
+      }
+    }
   }
 }
