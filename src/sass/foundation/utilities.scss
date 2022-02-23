@@ -42,6 +42,11 @@ $padding_names: (
   }
 }
 
+// コンテナ
+.container {
+  @include g.container();
+}
+
 // グリッド
 $grid_gap: 16px;
 
@@ -49,7 +54,6 @@ $grid_gap: 16px;
   display: flex;
   flex-wrap: wrap;
   margin: calc($grid_gap / -2);
-  
   & > [class^="col-"] {
     flex-shrink: 0;
     padding: calc($grid_gap / 2);
